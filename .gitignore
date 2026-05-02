@@ -1,0 +1,22 @@
+# Node
+node_modules/
+dist/
+*.log
+.pnpm-debug.log*
+*.tsbuildinfo
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Editors
+.vscode/
+.idea/
+.DS_Store
