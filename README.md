@@ -104,7 +104,15 @@ The frontend doesn't change — it only knows about `POST /api/waitlist`.
 
 ## Deployment
 
-- **Frontend:** `npm run build` produces a static bundle in `frontend/dist/`. Deploy to any static host (Vercel, Netlify, Cloudflare Pages, S3, nginx).
+### Quick preview on GitHub Pages (no backend required)
+
+A GitHub Actions workflow at `.github/workflows/pages.yml` builds the frontend with `VITE_PUBLIC_DEMO=1` and publishes it to GitHub Pages on every push to `main` or `claude/new-session-uIKeP`. In demo mode the form skips the backend and simulates success — useful for showing the page at events before the backend is live.
+
+To enable: in the GitHub repo, **Settings → Pages → Build and deployment → Source: GitHub Actions**. The first push after that will publish to `https://<owner>.github.io/<repo>/`.
+
+### Production (with the FastAPI backend)
+
+- **Frontend:** `npm run build` produces a static bundle in `frontend/dist/`. Deploy to any static host (Vercel, Netlify, Cloudflare Pages, S3, nginx). Leave `VITE_PUBLIC_DEMO` unset so the form calls the real API.
 - **Backend:** any Python host that runs `uvicorn`. Set `BUTTONDOWN_API_KEY` and `ALLOWED_ORIGINS` (comma-separated, including the production frontend URL).
 - Put the frontend and backend behind the same hostname (or proxy `/api` from the frontend host to the backend) so the relative `/api/waitlist` path works.
 

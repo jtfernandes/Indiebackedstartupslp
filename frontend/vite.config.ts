@@ -4,6 +4,9 @@ import path from 'node:path';
 
 export default defineConfig({
   plugins: [react()],
+  // Relative base so the build works under any subpath (e.g. GitHub Pages
+  // at /<repo>/ as well as a custom domain at /).
+  base: './',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
