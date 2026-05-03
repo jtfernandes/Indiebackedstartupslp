@@ -31,15 +31,13 @@ The page should sound like a founder talking to another founder about something 
 **Sub**
 > Tell us about your company once. We pick the right policies from 11 carriers across Iberia, keep them current as you grow, and only call you when something needs your attention.
 
-**Primary CTA** · `Tell us about your company →`
-**Secondary (text link)** · `See what's typically covered ↓`
+**Primary CTA** · `Join the waitlist →`
 
 **PT**
 **Eyebrow** · IndieBacked Startups
 **H1** · **Proteção, em piloto automático.**
 **Sub** · *Conta-nos sobre a tua empresa uma vez. Escolhemos as apólices certas em 11 seguradoras da Ibéria, mantemo-las atualizadas à medida que cresces, e só te ligamos quando precisa da tua atenção.*
-**Primary CTA** · `Fala-nos da tua empresa →`
-**Secondary** · `Vê o que costumamos cobrir ↓`
+**Primary CTA** · `Entrar na waitlist →`
 
 ---
 
@@ -78,52 +76,38 @@ Layout: 3-col grid on desktop, 2 on tablet, stacked on mobile.
 **Three steps** — each ~30 words.
 
 **01 · Tell us once.**
-30 minutes of questions. Stage, headcount, customers, geography. The kind of thing your CFO already knows.
-*PT — **Conta-nos uma vez.** 30 minutos de perguntas. Fase, headcount, clientes, geografias. Coisas que o teu CFO já sabe de cor.*
+3 minutes of questions. Stage, headcount, customers, geography. The kind of thing your CFO already knows.
+*PT — **Conta-nos uma vez.** 3 minutos de perguntas. Fase, headcount, clientes, geografias. Coisas que o teu CFO já sabe de cor.*
 
 **02 · We pick and bind.**
-We shop 11 carriers across Portugal and Spain, propose a stack that fits your stage, and bind the policies you approve. Usually within a week.
-*PT — **Escolhemos e contratamos.** Comparamos 11 seguradoras em Portugal e Espanha, propomos um stack adequado à tua fase e contratamos as apólices que aprovares. Normalmente numa semana.*
+We shop 11 carriers across Portugal and Spain, propose a stack that fits your stage, and bind the policies you approve. Often immediately. Worst case, next business day.
+*PT — **Escolhemos e contratamos.** Comparamos 11 seguradoras em Portugal e Espanha, propomos um stack adequado à tua fase e contratamos as apólices que aprovares. Muitas vezes na hora. Na pior das hipóteses, no dia útil seguinte.*
 
-**03 · We renew before you notice.**
-Software watches your renewals, your headcount, your rounds, and your customer geographies. When something changes, the system flags it, we make the call, and you get a one-line update. You don't chase us.
-*PT — **Renovamos antes de reparares.** O software monitoriza as renovações, o teu headcount, as tuas rondas e as geografias dos teus clientes. Quando algo muda, o sistema alerta, nós tratamos, e tu recebes uma atualização numa linha. Não és tu que andas atrás de nós.*
+**03 · Renewals come back automatically.**
+At renewal — or when something material changes — we run the numbers and propose: renegotiate, renew, or cancel. Three options, prepared for you. Your call.
+*PT — **As renovações voltam automaticamente.** Na renovação — ou quando algo material muda — fazemos as contas e propomos: renegociar, renovar ou cancelar. Três opções, prontas. A decisão é tua.*
 
 > Done right, you forget we're there.
 > *PT — Bem feito, esqueces-te que existimos.*
 
 ---
 
-## 4 · Pricing band  *(directional — sharpen with real numbers later)*
+## 4 · Priced per product, not per bundle
 
-**Header** · `What founders pay at each stage.`
-**PT** · `O que os fundadores costumam pagar em cada fase.`
+**Header** · `Priced per product. Quoted in 24h.`
+**PT** · `Preço por produto. Proposta em 24h.`
 
-**Sub**
-> A rough sense — actual numbers depend on headcount, geography, and what you ship.
+**Body**
+> We don't sell bundles. Each policy gets its own quote with a real, line-item price. You see what each piece costs, you decide what to bind, you can drop coverage you don't need.
 
-**PT** · *Um sentido aproximado — os valores reais dependem do headcount, da geografia e do que vendes.*
+**PT** · *Não vendemos pacotes. Cada apólice tem a sua proposta com um preço discriminado. Vês o que cada peça custa, decides o que contratas, e podes deixar de fora o que não precisas.*
 
-```
-PRE-SEED · 1–5 people
-€1.5k–3k/year · workers' comp + small D&O
+**Anchor (smaller type, single line)**
+> Cheapest piece in our market is workers' comp in Portugal — around **€150 / year per person**. The most expensive lever is D&O after a complicated round. Most pre-seed teams spend less on their full stack than founders expect.
 
-SEED · 5–15 people
-€3k–8k/year · adds cyber + tech E&O
+**PT anchor** · *A peça mais barata no nosso mercado é a AT em Portugal — à volta de **€150 / ano por pessoa**. A alavanca mais cara é D&O depois de uma ronda complicada. A maioria das equipas pre-seed paga pelo stack completo menos do que os fundadores esperam.*
 
-SERIES A · 15–50 people
-€8k–20k/year · adds EPL + group health
-
-SERIES B+ · 50 people and up
-€20k+/year · tailored stack — talk to us
-```
-
-**Footnote (smaller type below the list)**
-> Cheapest piece in our market is workers' comp in Portugal, around €150/year per person. The most expensive lever is D&O after a complicated round.
-
-**PT footnote** · *A peça mais barata no nosso mercado é a AT em Portugal, à volta de €150/ano por pessoa. A alavanca mais cara é D&O depois de uma ronda complicada.*
-
-> ⚠️ **Placeholder ranges** — confirm with João before going live. Easy to swap; the structure is what matters.
+> Why this shape: a summed-up "from €X" range can read as expensive even when each piece is cheap, because founders never see the full bill at once. Per-product pricing keeps every line digestible and lets the *cheapest* number anchor the page.
 
 ---
 
@@ -179,10 +163,10 @@ SERIES B+ · 50 people and up
 
 No section header. Three quotes, each one structured to **attack the alternative**.
 
-> "I'd been chasing my old broker for three weeks for a single certificate. Indie sent it back the same day."
-> **João Bogalho** · Co-founder & COO, Leadzai
+> "I'd been chasing my old broker for three weeks for a single certificate. Indie did it immediately."
+> **João Bogalho** · Chief People Officer, Leadzai
 
-> "We tried to set up D&O ourselves before our Series A. Six weeks of quotes that didn't make sense. Indie did it in eight days."
+> "We tried to set up D&O ourselves before our Series A. Six weeks of quotes that didn't make sense. Indie did it immediately."
 > **Filipe Nery** · Founder & CEO, Lyzer
 
 > "Founders ask us about insurance constantly. Indie is the first answer that's actually useful."
@@ -190,10 +174,10 @@ No section header. Three quotes, each one structured to **attack the alternative
 
 **PT versions:**
 
-> *"Andei três semanas atrás do meu antigo mediador por causa de um certificado. A Indie devolveu-o no próprio dia."*
-> **João Bogalho** · Co-founder & COO, Leadzai
+> *"Andei três semanas atrás do meu antigo mediador por causa de um certificado. A Indie tratou disso na hora."*
+> **João Bogalho** · Chief People Officer, Leadzai
 
-> *"Tentámos montar o D&O sozinhos antes da Série A. Seis semanas de propostas que não faziam sentido. A Indie fechou em oito dias."*
+> *"Tentámos montar o D&O sozinhos antes da Série A. Seis semanas de propostas que não faziam sentido. A Indie tratou disso na hora."*
 > **Filipe Nery** · Founder & CEO, Lyzer
 
 > *"Os fundadores perguntam-nos sobre seguros constantemente. A Indie é a primeira resposta que é mesmo útil."*
@@ -261,12 +245,11 @@ Founders backing founders.
 **PT** · `Fala-nos da tua empresa.`
 
 **Body**
-> 30 minutes. We come back with a stack that fits your stage and a quote that doesn't waste your time.
+> 3 minutes of intake. We come back with a stack that fits your stage and a quote that doesn't waste your time.
 
-**PT** · *30 minutos. Voltamos com um stack adequado à tua fase e uma proposta que não te faz perder tempo.*
+**PT** · *3 minutos de intake. Voltamos com um stack adequado à tua fase e uma proposta que não te faz perder tempo.*
 
-**Primary CTA button** · `Start the conversation →` / `Começa a conversa →`
-**Secondary text link** · `See pricing again ↑` / `Ver preços de novo ↑`
+**Primary CTA button** · `Join the waitlist →` / `Entrar na waitlist →`
 
 ---
 
@@ -290,10 +273,4 @@ EN/PT toggle stays in top-right. No nav, no social.
 | "Backed by" list | João | Olisipo Way, Caravela, COREAngels — same as v1 |
 | Real customer wins / claims numbers | João | Optional but would replace one of the testimonials with hard data |
 
-## Open structural decisions for me
-
-- **CTA destination**: same waitlist form as v1 (segment selector → name/company/email)? Or upgrade to a slightly longer form that captures stage + headcount up-front?
-- **Pricing band exactness**: keep ranges (current draft) or replace with single "from €X" anchors per stage?
-- **Risk stack interactivity**: static rows (current draft) or expandable/clickable rows that reveal the trigger and a one-liner from the carrier?
-
-Once you've read through, tell me what to keep, cut, or rewrite. After this is locked I'll move to wireframe (Phase 2).
+Once everything in the deck is locked, I'll move to wireframe (Phase 2 — static structural mockup, no animation, so you can see the bones before we polish).
