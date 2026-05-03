@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hero · Mockup 01 — IndieBacked Startups v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper:       #f6f1e7;
+    --paper-edge:  #ebe3d2;
+    --ink:         #2a2520;
+    --ink-soft:    #6b6258;
+    --ink-faint:   #b3a994;
+    --accent:      #e8c500;   /* indie-yellow, dialled down for paper */
+    --accent-soft: #f7e98f;
+    --rule:        #c8bda7;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Kalam', 'Caveat', system-ui, sans-serif;
+  }
+
+  /* paper texture: subtle crosshatch + warm vignette */
+  body {
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,0.6), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(0,0,0,0.04), transparent 50%),
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0 1px, transparent 1px 24px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.015) 0 1px, transparent 1px 24px);
+    min-height: 100vh;
+    padding: 64px 32px 96px;
+  }
+
+  .frame {
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* designer header */
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    border-bottom: 1.5px dashed var(--rule);
+    padding-bottom: 16px;
+  }
+  .header .file {
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .header .meta {
+    font-family: 'Kalam', sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-align: right;
+    line-height: 1.4;
+  }
+  .header .meta strong { color: var(--ink); }
+
+  /* main artboard */
+  .artboard {
+    position: relative;
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 32px),
+      var(--paper);
+    box-shadow:
+      4px 4px 0 0 rgba(0,0,0,0.08),
+      inset 0 0 0 1px rgba(0,0,0,0.04);
+    padding: 56px 56px 48px;
+    overflow: visible;
+  }
+  .artboard::before {
+    content: 'HERO  ·  desktop  ·  1440 × 720';
+    position: absolute;
+    top: -14px; left: 24px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--ink-soft);
+    letter-spacing: 1px;
+  }
+
+  /* nav strip (sketched) */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1.5px dashed var(--rule);
+    margin-bottom: 64px;
+  }
+  .nav .logo {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+  }
+  .nav .logo .dot { color: var(--accent); }
+  .nav .right { display: flex; gap: 18px; align-items: center; font-size: 16px; color: var(--ink-soft); }
+  .nav .lang {
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-family: 'Kalam', sans-serif;
+    font-size: 14px;
+  }
+  .nav .lang b { color: var(--ink); }
+  .nav .lang span { color: var(--ink-faint); margin-left: 6px; }
+
+  /* hero content stack */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .eyebrow {
+    font-family: 'Kalam', sans-serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+  }
+  .eyebrow::before {
+    content: '▸ ';
+    color: var(--accent);
+  }
+
+  h1.headline {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: 0.95;
+    letter-spacing: -1px;
+    color: var(--ink);
+    margin: 0 0 28px;
+    max-width: 14ch;
+  }
+  h1.headline .accent {
+    display: inline-block;
+    position: relative;
+    color: var(--ink);
+  }
+  /* yellow highlight blob behind the period */
+  h1.headline .period {
+    color: var(--ink);
+    background: var(--accent);
+    padding: 0 8px 0 12px;
+    margin-left: -4px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 0 rgba(0,0,0,0.12);
+    display: inline-block;
+    transform: translateY(-6px) rotate(-1deg);
+  }
+
+  p.sub {
+    font-family: 'Kalam', sans-serif;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 56ch;
+    margin: 0 0 36px;
+  }
+
+  /* CTA — pencil-sketched button */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Kalam', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--ink);
+    background: var(--accent);
+    padding: 16px 28px;
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    box-shadow: 4px 4px 0 0 var(--ink);
+    text-decoration: none;
+    cursor: pointer;
+    transform: rotate(-0.4deg);
+  }
+  .cta .arrow { font-size: 24px; line-height: 1; }
+  .cta-row {
+    display: flex; align-items: center; gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cta-aside {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--ink-soft);
+    transform: rotate(-1deg);
+  }
+  .cta-aside .arrow-curve {
+    display: inline-block; transform: translate(-6px, 4px) rotate(160deg);
+    color: var(--ink-faint);
+    font-size: 28px;
+  }
+
+  /* status rail — the "autopilot is running" surface, below the fold-in */
+  .rail-label {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin: 28px 0 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .rail-label::before {
+    content: '';
+    width: 36px; height: 1.5px;
+    background: var(--ink-faint);
+    border-top: 1.5px dashed var(--ink-faint);
+  }
+
+  .rail {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.4);
+    overflow: hidden;
+    box-shadow: 3px 3px 0 0 rgba(0,0,0,0.08);
+  }
+  .rail .cell {
+    padding: 18px 16px;
+    border-right: 1.5px dashed var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 92px;
+  }
+  .rail .cell:last-child { border-right: none; }
+  .rail .name {
+    font-family: 'Kalam', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .rail .name .tick {
+    width: 14px; height: 14px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: inline-block;
+    background: var(--accent);
+    box-shadow: inset -2px -2px 0 rgba(0,0,0,0.08);
+  }
+  .rail .name .tick.muted { background: transparent; }
+  .rail .status {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--ink-soft);
+    letter-spacing: 0.3px;
+  }
+  .rail .status.warn {
+    color: var(--ink);
+    background: var(--accent-soft);
+    align-self: flex-start;
+    padding: 1px 8px;
+    border-radius: 3px;
+    transform: rotate(-0.5deg);
+  }
+  .rail .meta-row {
+    grid-column: 1 / -1;
+    border-top: 1.5px dashed var(--rule);
+    padding: 10px 16px;
+    display: flex; justify-content: space-between;
+    font-family: 'Caveat', cursive;
+    font-size: 17px;
+    color: var(--ink-soft);
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* annotations — designer's pencil notes */
+  .note {
+    position: absolute;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--ink-soft);
+    line-height: 1.2;
+    max-width: 220px;
+  }
+  .note::before {
+    content: '';
+    display: block;
+    width: 36px; height: 1.5px;
+    background: var(--ink-faint);
+    margin-bottom: 6px;
+    transform: rotate(-3deg);
+  }
+  .note.right { text-align: left; }
+  .note .arrow {
+    display: inline-block;
+    color: var(--ink-faint);
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  .note-1 { top: 130px; right: -240px; transform: rotate(2deg); }
+  .note-2 { top: 320px; right: -240px; transform: rotate(-1.5deg); }
+  .note-3 { bottom: 220px; right: -240px; transform: rotate(1.2deg); }
+  .note-4 { bottom: 60px; left: -220px; transform: rotate(-2deg); text-align: right; max-width: 200px; }
+
+  @media (max-width: 1280px) {
+    .note { display: none; }
+  }
+
+  /* footer caption */
+  .legend {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    font-family: 'Kalam', sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .legend .swatch {
+    display: inline-block; width: 14px; height: 14px;
+    border: 1.5px solid var(--ink);
+    margin-right: 6px;
+    vertical-align: -3px;
+    border-radius: 2px;
+  }
+  .legend .yellow { background: var(--accent); }
+  .legend .paper { background: var(--paper); }
+  .legend .ink   { background: var(--ink); }
+
+  /* tiny banner under headline showing copy provenance */
+  .copy-tag {
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--ink-faint);
+    letter-spacing: 0.5px;
+    margin-top: -12px;
+    margin-bottom: 24px;
+  }
+  .copy-tag b { color: var(--ink-soft); }
+
+  /* lang variant toggle (visual only) */
+  .variants {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .variant-card {
+    border: 1.5px dashed var(--rule);
+    border-radius: 4px;
+    padding: 28px 24px;
+    background: rgba(255,255,255,0.35);
+  }
+  .variant-card h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    margin: 0 0 14px;
+    color: var(--ink);
+    border-bottom: 1px dashed var(--rule);
+    padding-bottom: 6px;
+  }
+  .variant-card .vh {
+    font-family: 'Caveat', cursive;
+    font-size: 44px;
+    line-height: 1;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .variant-card .vh .period {
+    background: var(--accent);
+    padding: 0 6px 0 8px;
+    border-radius: 3px;
+    margin-left: -3px;
+  }
+  .variant-card .vs {
+    font-family: 'Kalam', sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+  .variant-card .vc {
+    font-family: 'Kalam', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    background: var(--accent);
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 2px 2px 0 0 var(--ink);
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+
+    <!-- file header -->
+    <div class="header">
+      <div class="file">
+        hero-01 · IndieBacked Startups v2 <span style="color:var(--ink-faint)">/ pencil pass</span>
+      </div>
+      <div class="meta">
+        <strong>Section 1 · Hero</strong><br />
+        wireframe · structure only · no animation
+      </div>
+    </div>
+
+    <!-- main artboard -->
+    <div class="artboard">
+
+      <!-- nav strip -->
+      <div class="nav">
+        <div class="logo">indie<span class="dot">.</span></div>
+        <div class="right">
+          <span class="lang"><b>EN</b><span>/ PT</span></span>
+        </div>
+      </div>
+
+      <!-- hero content -->
+      <div class="hero">
+        <div>
+          <p class="eyebrow">IndieBacked Startups</p>
+          <h1 class="headline">
+            Protection,<br />
+            on autopilot<span class="period">.</span>
+          </h1>
+          <p class="copy-tag"><b>copy locked</b> — V2_COPY_DECK.md §1</p>
+          <p class="sub">
+            Tell us about your company once. We pick the right policies from
+            <b>11 carriers</b> across Iberia, keep them current as you grow,
+            and only call you when something needs your attention.
+          </p>
+
+          <div class="cta-row">
+            <a href="#" class="cta">
+              Join the waitlist <span class="arrow">→</span>
+            </a>
+            <span class="cta-aside">
+              <span class="arrow-curve">↩</span>
+              one CTA. no secondary.
+            </span>
+          </div>
+        </div>
+
+        <!-- status rail -->
+        <div>
+          <div class="rail-label">Below the headline · live "autopilot is running" surface</div>
+          <div class="rail">
+            <div class="cell">
+              <div class="name"><span class="tick"></span> D&amp;O</div>
+              <div class="status">active</div>
+            </div>
+            <div class="cell">
+              <div class="name"><span class="tick"></span> Cyber</div>
+              <div class="status">active</div>
+            </div>
+            <div class="cell">
+              <div class="name"><span class="tick muted"></span> Tech E&amp;O</div>
+              <div class="status warn">renewing 14 Mar</div>
+            </div>
+            <div class="cell">
+              <div class="name"><span class="tick"></span> Workers' comp</div>
+              <div class="status">active</div>
+            </div>
+            <div class="cell">
+              <div class="name"><span class="tick"></span> Group health</div>
+              <div class="status">active</div>
+            </div>
+            <div class="meta-row">
+              <span>your protection · active stack</span>
+              <span>last update: yesterday</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- pencil annotations -->
+      <span class="note note-1">
+        <span class="arrow">←</span> yellow highlight on the period only.
+        single accent moment in the section.
+      </span>
+      <span class="note note-2">
+        <span class="arrow">←</span> sub keeps the <i>"11 carriers"</i> number
+        bolded — specifics over adjectives.
+      </span>
+      <span class="note note-3">
+        <span class="arrow">←</span> rail replaces the old side-panel.
+        runs full-width under the fold-in. shows the system is on.
+      </span>
+      <span class="note note-4">
+        copy is locked.<br />
+        only the <b>shape</b> is up<br />
+        for review here. <span class="arrow">→</span>
+      </span>
+
+    </div>
+
+    <!-- bilingual variants -->
+    <div class="variants">
+      <div class="variant-card">
+        <h3>EN — as shipped in deck</h3>
+        <div class="vh">Protection,<br />on autopilot<span class="period">.</span></div>
+        <p class="vs">Tell us about your company once. We pick the right policies from 11 carriers across Iberia, keep them current as you grow, and only call you when something needs your attention.</p>
+        <span class="vc">Join the waitlist →</span>
+      </div>
+      <div class="variant-card">
+        <h3>PT — paralelo</h3>
+        <div class="vh">Proteção,<br />em piloto automático<span class="period">.</span></div>
+        <p class="vs">Conta-nos sobre a tua empresa uma vez. Escolhemos as apólices certas em 11 seguradoras da Ibéria, mantemo-las atualizadas à medida que cresces, e só te ligamos quando precisa da tua atenção.</p>
+        <span class="vc">Entrar na waitlist →</span>
+      </div>
+    </div>
+
+    <!-- legend -->
+    <div class="legend">
+      <span><span class="swatch paper"></span> paper #f6f1e7 (mockup only — production stays #110522 dark)</span>
+      <span><span class="swatch ink"></span> ink #2a2520</span>
+      <span><span class="swatch yellow"></span> indie-yellow #FBDE23 (single accent moment)</span>
+    </div>
+
+  </div>
+</body>
+</html>
