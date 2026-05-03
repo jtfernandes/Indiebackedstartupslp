@@ -6,14 +6,17 @@
 
 ---
 
-## Voice rules (apply everywhere)
+## Voice principles
 
-- One promise per sentence
-- Specifics beat adjectives ("11 carriers" not "many carriers")
-- Founder-to-founder, never marketer-to-buyer
-- Active voice; subject is the founder when possible
-- Numbers are anchors — renewal dates, carrier count, stage tiers, prices
-- **Banned words:** revolutionary, empowering, next-generation, AI-powered, seamless, holistic, ecosystem, journey, leverage (as a verb), unlock
+The page should sound like a founder talking to another founder about something important. Not chatty, not corporate, not anti-corporate as a stance. Calm. Specific. Honest.
+
+- **Candid over clever.** If we can't do something, we say so. If a number is approximate, we mark it approximate. The minute we sound like a brochure, the page loses the founder.
+- **Agentic and AI-first, without saying so.** Software does the monitoring, the renewal tracking, the gap analysis, the doc parsing. That shows up in *what we describe ourselves doing* — not in marketing labels. We don't lead with "AI-powered." We let it be visible in the product.
+- **Seamless is the goal, not the boast.** The promise is that you forget we're there. We say it once and then we earn it.
+- **Trustworthy advisor, not vendor.** We give the advice we'd give a friend — including advice that doesn't make us money. *"You don't need that yet." "Talk to a lawyer first." "This is a regulator question, not an insurance question."*
+- **Specifics over adjectives.** "11 carriers" beats "many carriers." "€150/year per person" beats "starts low." Numbers are the load-bearing part of the page.
+- **Sentences land.** One promise per sentence. Active voice. Founder as subject when possible.
+- **No banned-word lists.** If *"leverage"* is the most accurate verb, use it. If *"unlock"* describes what actually happens, use it. The test isn't avoidance — it's whether a smart founder reading at 11pm would believe the sentence.
 
 ---
 
@@ -83,8 +86,11 @@ We shop 11 carriers across Portugal and Spain, propose a stack that fits your st
 *PT — **Escolhemos e contratamos.** Comparamos 11 seguradoras em Portugal e Espanha, propomos um stack adequado à tua fase e contratamos as apólices que aprovares. Normalmente numa semana.*
 
 **03 · We renew before you notice.**
-We track your renewals, your headcount, your funding rounds, and your customer geographies. When something changes, we update your stack and tell you what changed. You don't chase us.
-*PT — **Renovamos antes de reparares.** Acompanhamos as renovações, o teu headcount, as tuas rondas e as geografias dos teus clientes. Quando algo muda, atualizamos o stack e dizemos-te o que mudou. Não és tu que andas atrás de nós.*
+Software watches your renewals, your headcount, your rounds, and your customer geographies. When something changes, the system flags it, we make the call, and you get a one-line update. You don't chase us.
+*PT — **Renovamos antes de reparares.** O software monitoriza as renovações, o teu headcount, as tuas rondas e as geografias dos teus clientes. Quando algo muda, o sistema alerta, nós tratamos, e tu recebes uma atualização numa linha. Não és tu que andas atrás de nós.*
+
+> Done right, you forget we're there.
+> *PT — Bem feito, esqueces-te que existimos.*
 
 ---
 
