@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { Hero } from '@/components/Hero';
-import { Problem } from '@/components/Problem';
-import { ForStartups } from '@/components/ForStartups';
-import { AudienceSection } from '@/components/AudienceSection';
+import { TriggerStrip } from '@/components/TriggerStrip';
+import { HowAutopilot } from '@/components/HowAutopilot';
+import { Pricing } from '@/components/Pricing';
+import { RiskStack } from '@/components/RiskStack';
+import { MultiCarrier } from '@/components/MultiCarrier';
+import { Testimonials } from '@/components/Testimonials';
+import { Partners } from '@/components/Partners';
 import { WhyIndie } from '@/components/WhyIndie';
-import { LogoStrip } from '@/components/LogoStrip';
+import { FinalCTA } from '@/components/FinalCTA';
 import { Footer } from '@/components/Footer';
 import { WaitlistDialog } from '@/components/WaitlistDialog';
 import type { Segment } from '@/lib/i18n';
@@ -24,13 +28,15 @@ export default function App() {
       <LanguageToggle />
       <main>
         <Hero onCta={() => openWith(null)} />
-        <Problem />
-        <ForStartups onCta={openWith} />
-        <AudienceSection segment="vc" onCta={openWith} />
-        <AudienceSection segment="accelerator" onCta={openWith} />
+        <TriggerStrip />
+        <HowAutopilot />
+        <Pricing />
+        <RiskStack />
+        <MultiCarrier />
+        <Testimonials />
+        <Partners onCta={openWith} />
         <WhyIndie />
-        <LogoStrip variant="carriers" />
-        <LogoStrip variant="ecosystem" />
+        <FinalCTA onCta={() => openWith(null)} />
       </main>
       <Footer />
       <WaitlistDialog

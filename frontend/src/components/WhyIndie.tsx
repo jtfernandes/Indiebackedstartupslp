@@ -9,14 +9,14 @@ export function WhyIndie() {
         <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
           {t.why.kicker}
         </p>
-        <h2 className="mb-16 max-w-3xl text-3xl font-bold leading-tight tracking-tightish text-white sm:text-4xl lg:text-5xl">
+        <h2 className="mb-14 max-w-3xl text-3xl font-bold leading-tight tracking-tightish text-white sm:text-4xl lg:text-5xl">
           {t.why.title}
         </h2>
-        <div className="grid gap-px bg-white/10 md:grid-cols-2">
+        <div className="space-y-8 max-w-3xl">
           {t.why.points.map((p) => (
-            <div key={p.title} className="bg-indie-black p-8 sm:p-10">
-              <h3 className="mb-3 text-lg font-bold text-white">{p.title}</h3>
-              <p className="text-base leading-relaxed text-white/65">{p.body}</p>
+            <div key={p.headline} className="border-l-2 border-indie-yellow/70 pl-6">
+              <p className="text-lg font-bold text-white">{p.headline}</p>
+              <p className="mt-2 text-base leading-relaxed text-white/65">{p.body}</p>
             </div>
           ))}
         </div>
