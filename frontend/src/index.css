@@ -1115,6 +1115,17 @@ section:last-of-type { border-bottom: 0; }
 @media (max-width: 560px) {
   .trigger-grid { grid-template-columns: 1fr; }
   .carrier-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-inner { height: 60px; gap: 12px; }
+  .brand-text { display: none; }
+  .nav-right { gap: 8px; }
+  .theme-toggle { display: none; }
+  .pitch-cross { display: none; }
+  .nav-cta {
+    font-size: 11px;
+    padding: 8px 14px;
+    letter-spacing: 0.08em;
+  }
+  .lang-toggle button { padding: 5px 9px; font-size: 10px; }
 }
 
 /* ============================================================
