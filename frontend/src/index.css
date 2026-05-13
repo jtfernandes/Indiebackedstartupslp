@@ -629,7 +629,6 @@ section:last-of-type { border-bottom: 0; }
 .risk-cell {
   padding: 24px 24px 24px 0;
   border-bottom: 1px solid var(--indie-light-grey);
-  display: flex; flex-direction: column; align-items: flex-start;
 }
 .risk-cell + .risk-cell { padding-left: 24px; }
 .risk-name {
@@ -648,12 +647,17 @@ section:last-of-type { border-bottom: 0; }
   margin-top: 4px;
 }
 .risk-what { font-size: 16px; line-height: 1.55; color: var(--fg-1); }
-.risk-when { font-size: 14px; line-height: 1.5; color: var(--fg-3); }
+.risk-when {
+  font-size: 14px; line-height: 1.5; color: var(--fg-3);
+  position: relative;
+}
 .risk-when::before {
-  content: ""; display: block;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 24px;
   width: 16px; height: 2px;
   background: var(--indie-yellow);
-  margin-bottom: 10px;
 }
 
 /* ---------- CARRIERS ---------- */
@@ -1084,6 +1088,7 @@ section:last-of-type { border-bottom: 0; }
   .risk-cell { padding: 14px 0; border-bottom: 1px solid var(--indie-light-grey); }
   .risk-cell + .risk-cell { padding-left: 0; padding-top: 0; }
   .risk-cell + .risk-cell + .risk-cell { padding-bottom: 24px; border-bottom: 1px solid var(--indie-border); }
+  .risk-when::before { display: none; }
   .carrier-grid { grid-template-columns: repeat(3, 1fr); }
   .carriers { padding: 48px 28px; margin: 64px 0; }
   .quotes { grid-template-columns: 1fr; }

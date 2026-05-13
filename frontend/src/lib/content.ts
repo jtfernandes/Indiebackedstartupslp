@@ -128,7 +128,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       anchor: {
         eyebrow: 'What changes the price',
         items: [
-          { strong: 'Headcount and payroll geography.', rest: ' Drives AT and Saúde.' },
+          { strong: 'Headcount and payroll geography.', rest: " Drives workers' comp and group health." },
           { strong: 'Cap-table complexity and investor count.', rest: ' Drives D&O.' },
           { strong: 'Customer geography and data volume.', rest: ' Drives Cyber.' },
           { strong: 'Revenue mix and SLA exposure.', rest: ' Drives Tech E&O.' },
