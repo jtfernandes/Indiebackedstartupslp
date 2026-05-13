@@ -6,6 +6,17 @@ import type {
 } from '@/lib/pitch-content';
 import { IconCheck } from '../Icons';
 
+export const CALENDLY_URL = 'https://calendar.app.google/otk2NgCNSPLJZB2S6';
+
+export function SecondaryEmailCTA({ lang, subject }: { lang: Lang; subject: string }) {
+  const prefix = lang === 'pt' ? 'ou envia email para' : 'or email';
+  return (
+    <a className="pitch-cta-secondary" href={`mailto:partners@indie.pt?subject=${subject}`}>
+      {prefix} partners@indie.pt
+    </a>
+  );
+}
+
 export function BenchmarkPanel({ t }: { t: BenchmarkPanelStrings }) {
   return (
     <div className="stack-frame">
@@ -97,15 +108,18 @@ export function TrustBlock({ lang }: { lang: Lang }) {
   );
 }
 
-interface PitchFinalProps { h: string; body: string; cta: string }
+interface PitchFinalProps { h: string; body: string; cta: string; lang: Lang; subject: string }
 
-export function PitchFinal({ h, body, cta }: PitchFinalProps) {
+export function PitchFinal({ h, body, cta, lang, subject }: PitchFinalProps) {
   return (
     <section className="final">
       <div className="wrap">
         <h2>{h}</h2>
         <p>{body}</p>
-        <a className="final-cta" href="mailto:partners@indie.pt?subject=IndieBacked%20intro">{cta}</a>
+        <a className="final-cta" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">{cta}</a>
+        <div className="pitch-cta-secondary-wrap">
+          <SecondaryEmailCTA lang={lang} subject={subject} />
+        </div>
       </div>
     </section>
   );

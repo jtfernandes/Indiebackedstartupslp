@@ -189,8 +189,10 @@ export function Testimonials({ quotes }: { quotes: LangContent['quotes'] }) {
   return (
     <section style={{ borderBottom: 0 }}>
       <div className="wrap">
+        <div className="sec-eyebrow"><span className="num">·</span>{quotes.eyebrow}</div>
+        <p className="sec-sub" style={{ marginBottom: 40, marginTop: 8 }}>{quotes.sub}</p>
         <div className="quotes">
-          {quotes.map((q, i) => (
+          {quotes.items.map((q, i) => (
             <div className="quote" key={i}>
               <span className="qmark">“</span>
               <p className="qbody">{q.body}</p>

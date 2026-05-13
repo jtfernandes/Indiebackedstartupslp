@@ -49,7 +49,7 @@ export interface LangContent {
   pricing: { eyebrow: string; h2: string; body: string; anchor: PricingAnchor };
   riskstack: { eyebrow: string; h2: string; sub: string; heads: [string, string, string]; rows: RiskRow[] };
   carriers: { eyebrow: string; h2: string; body: string; logos: string[] };
-  quotes: Quote[];
+  quotes: { eyebrow: string; sub: string; items: Quote[] };
   vca: { eyebrow: string; h2: string; cols: VcaCol[] };
   whyus: { eyebrow: string; h2: string; blocks: WhyBlock[] };
   final: { h2: string; sub: string; cta: string };
@@ -78,11 +78,11 @@ export const CONTENT: Record<Lang, LangContent> = {
       eyebrow: 'IndieBacked Startups',
       title1: 'Protection,',
       title2: 'on autopilot',
-      sub: 'Tell us about your company once. We pick the right policies from 15 carriers across Iberia, keep them current as you grow, and only call you when something needs your attention.',
+      sub: 'Tell us about your company once. We pick the right policies from 15 carriers, keep them current as you grow, and only call when you need to decide.',
       cta: 'Join the waitlist',
       meta: 'Indie Mediação de Seguros · ASF #420563256 · Portugal & Spain',
       stack: {
-        title: 'Active stack',
+        title: 'Active stack · Illustrative',
         company: 'Vexa',
         co_initial: 'V',
         meta_people: '12 people',
@@ -92,7 +92,7 @@ export const CONTENT: Record<Lang, LangContent> = {
           { name: 'Cyber', carrier: 'Berkley', status: 'Active' },
           { name: 'Tech E&O', carrier: 'Innovarisk', status: 'Active' },
           { name: "Workers' comp", carrier: 'Fidelidade', status: 'Active' },
-          { name: 'Group health', carrier: 'MetLife', status: 'Renews Mar 12', renewal: true },
+          { name: 'Group health', carrier: 'MetLife', status: 'Renews Jul 18', renewal: true },
         ],
         foot_left: 'Last reviewed 6 days ago',
         foot_right: 'View stack',
@@ -122,7 +122,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       closing: "Done right, you forget we're there.",
     },
     pricing: {
-      eyebrow: 'Pricing',
+      eyebrow: 'What it costs',
       h2: 'Priced per product. Quoted in 24h.',
       body: "We don't sell bundles. Each policy gets its own quote with a real, line-item price. You see what each piece costs, you decide what to bind, you can drop coverage you don't need.",
       anchor: {
@@ -157,11 +157,15 @@ export const CONTENT: Record<Lang, LangContent> = {
       body: "We're not locked to one balance sheet. We shop the market for the right policy at each stage and switch carriers when it makes sense for you. You see one contact, one bill, one renewal calendar.",
       logos: ['Fidelidade', 'Generali Tranquilidade', 'Allianz', 'Caravela Seguros', 'AIG', 'Hiscox', 'Berkley', 'Innovarisk', 'Nuvu', 'Chubb', 'Real Vida', 'MetLife', 'April', 'Intermundial', 'VD Insurance'],
     },
-    quotes: [
-      { body: "We spent six weeks getting quotes the old way. Indie came back next-day with a real proposal we could actually read. It's the difference between a broker and a fax machine.", name: 'Sofia Castro', role: 'COO, Vexa' },
-      { body: "I tried buying D&O direct after our seed round. Three logins, two PDFs in English I couldn't fully make sense of, and I still wasn't sure what I'd bought. Indie just sent me the answer.", name: 'Tiago Mendes', role: 'CEO, Routeful' },
-      { body: 'Our last accelerator handed us a discount code on a generic group plan. Indie actually looked at the cap table and told us what to bind first.', name: 'Marta Lopes', role: 'Co-founder, Pulley.es' },
-    ],
+    quotes: {
+      eyebrow: 'Founder voices',
+      sub: 'Composites drawn from pilot conversations — names changed.',
+      items: [
+        { body: "We spent six weeks getting quotes the old way. Indie came back next-day with a real proposal we could actually read. It's the difference between a broker and a fax machine.", name: 'Sofia C.', role: 'COO, Series A SaaS · Lisbon' },
+        { body: "I tried buying D&O direct after our seed round. Three logins, two PDFs in English I couldn't fully make sense of, and I still wasn't sure what I'd bought. Indie just sent me the answer.", name: 'Tiago M.', role: 'CEO, seed-stage logistics · Porto' },
+        { body: 'Our last accelerator handed us a discount code on a generic group plan. Indie actually looked at the cap table and told us what to bind first.', name: 'Marta L.', role: 'Co-founder, marketplace · Madrid' },
+      ],
+    },
     vca: {
       eyebrow: 'For VCs and accelerators',
       h2: 'Built for the people backing them, too.',
@@ -224,11 +228,11 @@ export const CONTENT: Record<Lang, LangContent> = {
       eyebrow: 'IndieBacked Startups',
       title1: 'Proteção,',
       title2: 'em piloto automático',
-      sub: 'Fala-nos da tua empresa, uma vez. Escolhemos as apólices certas entre 15 seguradoras em Portugal e Espanha, mantemo-las em dia à medida que cresces, e só te ligamos quando algo precisa da tua atenção.',
+      sub: 'Fala-nos da tua empresa, uma vez. Escolhemos as apólices certas em 15 seguradoras, mantemo-las em dia à medida que cresces, e só te ligamos quando há uma decisão para tomar.',
       cta: 'Entrar na lista de espera',
       meta: 'Indie Mediação de Seguros · ASF #420563256 · Portugal e Espanha',
       stack: {
-        title: 'Stack ativo',
+        title: 'Stack ativo · Ilustrativo',
         company: 'Vexa',
         co_initial: 'V',
         meta_people: '12 pessoas',
@@ -238,7 +242,7 @@ export const CONTENT: Record<Lang, LangContent> = {
           { name: 'Cyber', carrier: 'Berkley', status: 'Ativa' },
           { name: 'Tech E&O', carrier: 'Innovarisk', status: 'Ativa' },
           { name: 'Acidentes de Trabalho', carrier: 'Fidelidade', status: 'Ativa' },
-          { name: 'Saúde de grupo', carrier: 'MetLife', status: 'Renova 12 mar', renewal: true },
+          { name: 'Saúde de grupo', carrier: 'MetLife', status: 'Renova 18 jul', renewal: true },
         ],
         foot_left: 'Revisto há 6 dias',
         foot_right: 'Ver stack',
@@ -268,7 +272,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       closing: 'Feito como deve ser, esqueces-te de nós.',
     },
     pricing: {
-      eyebrow: 'Preço',
+      eyebrow: 'O que custa',
       h2: 'Preço por produto. Cotação em 24h.',
       body: 'Não vendemos pacotes. Cada apólice tem cotação própria, com preço linha a linha. Vês o que cada peça custa, decides o que contratar, e podes cortar a cobertura que não precisas.',
       anchor: {
@@ -303,11 +307,15 @@ export const CONTENT: Record<Lang, LangContent> = {
       body: 'Não estamos presos a um único balanço. Procuramos a apólice certa no mercado em cada estágio, e mudamos de seguradora quando faz sentido para ti. Vês um contacto, uma fatura, um calendário de renovações.',
       logos: ['Fidelidade', 'Generali Tranquilidade', 'Allianz', 'Caravela Seguros', 'AIG', 'Hiscox', 'Berkley', 'Innovarisk', 'Nuvu', 'Chubb', 'Real Vida', 'MetLife', 'April', 'Intermundial', 'VD Insurance'],
     },
-    quotes: [
-      { body: 'Estivemos seis semanas a apanhar cotações à moda antiga. A Indie respondeu no dia seguinte com uma proposta que se conseguia ler. É a diferença entre um corretor e um fax.', name: 'Sofia Castro', role: 'COO, Vexa' },
-      { body: 'Tentei contratar D&O sozinho depois da seed. Três logins, dois PDFs em inglês que não conseguia decifrar, e ainda não tinha a certeza do que tinha comprado. A Indie só me mandou a resposta.', name: 'Tiago Mendes', role: 'CEO, Routeful' },
-      { body: 'A nossa última aceleradora deu-nos um código de desconto num plano de grupo genérico. A Indie olhou para a cap table e disse-nos o que contratar primeiro.', name: 'Marta Lopes', role: 'Co-founder, Pulley.es' },
-    ],
+    quotes: {
+      eyebrow: 'Vozes de founders',
+      sub: 'Compostos a partir de conversas do pilot — nomes alterados.',
+      items: [
+        { body: 'Estivemos seis semanas a apanhar cotações à moda antiga. A Indie respondeu no dia seguinte com uma proposta que se conseguia ler. É a diferença entre um corretor e um fax.', name: 'Sofia C.', role: 'COO, SaaS Série A · Lisboa' },
+        { body: 'Tentei contratar D&O sozinho depois da seed. Três logins, dois PDFs em inglês que não conseguia decifrar, e ainda não tinha a certeza do que tinha comprado. A Indie só me mandou a resposta.', name: 'Tiago M.', role: 'CEO, logística seed · Porto' },
+        { body: 'A nossa última aceleradora deu-nos um código de desconto num plano de grupo genérico. A Indie olhou para a cap table e disse-nos o que contratar primeiro.', name: 'Marta L.', role: 'Co-founder, marketplace · Madrid' },
+      ],
+    },
     vca: {
       eyebrow: 'Para VCs e aceleradores',
       h2: 'Feito para quem os apoia, também.',
