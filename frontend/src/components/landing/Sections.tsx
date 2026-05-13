@@ -126,7 +126,8 @@ export function Pricing({ t }: { t: LangContent['pricing'] }) {
             <p className="pricing-body" style={{ margin: 0 }}>{t.body}</p>
           </div>
           <div className="pricing-anchor">
-            {t.anchor.map((a, i) => (
+            <p className="anchor-eyebrow">{t.anchor.eyebrow}</p>
+            {t.anchor.items.map((a, i) => (
               <p key={i}>
                 <strong>{a.strong}</strong>{a.rest}
               </p>
