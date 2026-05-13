@@ -18,6 +18,12 @@ export const IconClose = ({ size = 14 }: IconProps) => (
   </svg>
 );
 
+export const IconMenu = ({ size = 18 }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+  </svg>
+);
+
 export const IconFounder = ({ size = 18 }: IconProps) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="M3 21V18C3 16.3 4.3 15 6 15H10C11.7 15 13 16.3 13 18V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
