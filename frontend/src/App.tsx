@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CONTENT } from '@/lib/content';
-import { useLang } from '@/lib/lang';
+import { useLang, usePageTitle } from '@/lib/lang';
 import { Nav } from '@/components/landing/Nav';
 import {
   Autopilot,
@@ -17,8 +17,14 @@ import {
 } from '@/components/landing/Sections';
 import { Waitlist } from '@/components/landing/Waitlist';
 
+const HOME_TITLES = {
+  en: 'IndieBacked Startups — Protection, on autopilot.',
+  pt: 'IndieBacked Startups — Proteção, em piloto automático.',
+} as const;
+
 export default function App() {
   const [lang, setLang] = useLang();
+  usePageTitle(lang, HOME_TITLES);
   const [waitlistOpen, setWaitlistOpen] = useState(false);
 
   const openWaitlist = () => setWaitlistOpen(true);

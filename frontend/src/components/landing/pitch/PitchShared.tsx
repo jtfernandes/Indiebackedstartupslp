@@ -1,28 +1,28 @@
+import type { Lang, LangContent } from '@/lib/content';
+import { CONTENT } from '@/lib/content';
+import type {
+  BenchmarkPanelStrings,
+  CohortPanelStrings,
+} from '@/lib/pitch-content';
 import { IconCheck } from '../Icons';
 
-export function BenchmarkPanel() {
-  const rows = [
-    { stage: 'Pre-seed', val: 38 },
-    { stage: 'Seed', val: 71 },
-    { stage: 'Series A', val: 94 },
-    { stage: 'Series B', val: 98 },
-  ];
+export function BenchmarkPanel({ t }: { t: BenchmarkPanelStrings }) {
   return (
     <div className="stack-frame">
       <div className="snap-card">
         <div className="snap-head">
           <div>
-            <p className="snap-title">Q1 Coverage benchmark</p>
+            <p className="snap-title">{t.title}</p>
             <div className="snap-meta">
-              <span>D&amp;O take-up by stage</span>
+              <span>{t.subtitle}</span>
               <span className="sep">·</span>
-              <span>Iberia book</span>
+              <span>{t.book}</span>
             </div>
           </div>
-          <span className="snap-chip">Anonymised</span>
+          <span className="snap-chip">{t.chip}</span>
         </div>
         <div className="bench-rows">
-          {rows.map((r) => (
+          {t.rows.map((r) => (
             <div className="bench-row" key={r.stage}>
               <span className="bench-stage">{r.stage}</span>
               <div className="bench-bar">
@@ -33,7 +33,7 @@ export function BenchmarkPanel() {
           ))}
         </div>
         <div className="snap-foot">
-          <span>Sent quarterly. <strong>No company names.</strong></span>
+          <span>{t.foot_lead} <strong>{t.foot_emph}</strong></span>
           <span>→</span>
         </div>
       </div>
@@ -41,50 +41,35 @@ export function BenchmarkPanel() {
   );
 }
 
-type CohortStatus = 'live' | 'review' | 'queued';
-
-export function CohortPanel() {
-  const rows: { num: string; name: string; meta: string; status: CohortStatus }[] = [
-    { num: '01', name: 'Faro Robotics', meta: '4 people · D&O + Cyber + AT', status: 'live' },
-    { num: '02', name: 'Linha', meta: '2 people · AT + Tech E&O', status: 'live' },
-    { num: '03', name: 'Pulso', meta: '3 people · Full stack', status: 'live' },
-    { num: '04', name: 'Camões AI', meta: '5 people · AI Liability added', status: 'review' },
-    { num: '05', name: 'Routeful', meta: '6 people · ES expansion', status: 'live' },
-    { num: '06', name: 'Nuvem', meta: 'Onboarding', status: 'queued' },
-  ];
-  const label: Record<CohortStatus, string> = {
-    live: 'Stack live',
-    review: 'In review',
-    queued: 'Onboarding',
-  };
+export function CohortPanel({ t }: { t: CohortPanelStrings }) {
   return (
     <div className="stack-frame">
       <div className="snap-card">
         <div className="snap-head">
           <div>
-            <p className="snap-title">Cohort — Spring &lsquo;26</p>
+            <p className="snap-title">{t.title}</p>
             <div className="snap-meta">
-              <span>6 companies</span>
+              <span>{t.count_companies}</span>
               <span className="sep">·</span>
-              <span>5 stacks bound</span>
+              <span>{t.count_bound}</span>
             </div>
           </div>
-          <span className="snap-chip">Live</span>
+          <span className="snap-chip">{t.chip}</span>
         </div>
         <div className="cohort-rows">
-          {rows.map((r) => (
+          {t.rows.map((r) => (
             <div className="cohort-row" key={r.num}>
               <span className="num">{r.num}</span>
               <div>
                 <div className="cohort-name">{r.name}</div>
                 <div className="cohort-meta">{r.meta}</div>
               </div>
-              <span className={'cohort-status ' + r.status}>{label[r.status]}</span>
+              <span className={'cohort-status ' + r.status}>{t.status[r.status]}</span>
             </div>
           ))}
         </div>
         <div className="snap-foot">
-          <span>Alumni stay on after demo day.</span>
+          <span>{t.foot}</span>
           <span>→</span>
         </div>
       </div>
@@ -92,28 +77,15 @@ export function CohortPanel() {
   );
 }
 
-export function TrustBlock() {
-  const blocks = [
-    {
-      h: 'Indie Mediação de Seguros, Lda — ASF #420563256.',
-      p: 'Regulated. Accountable. On the hook for the advice we give.',
-    },
-    {
-      h: '11 carrier partners across Portugal and Spain.',
-      p: "We're not a comparison site and we're not locked to a single balance sheet.",
-    },
-    {
-      h: 'Backed by Olisipo Way, Caravela, COREAngels.',
-      p: 'Founders backing founders.',
-    },
-  ];
+export function TrustBlock({ lang }: { lang: Lang }) {
+  const t: LangContent['whyus'] = CONTENT[lang].whyus;
   return (
     <section>
       <div className="wrap">
-        <div className="sec-eyebrow"><span className="num">·</span>Why us</div>
-        <h2 className="sec-h2" style={{ marginBottom: 48 }}>Licensed. Independent. Built here.</h2>
+        <div className="sec-eyebrow"><span className="num">·</span>{t.eyebrow}</div>
+        <h2 className="sec-h2" style={{ marginBottom: 48 }}>{t.h2}</h2>
         <div className="why-grid">
-          {blocks.map((b, i) => (
+          {t.blocks.map((b, i) => (
             <div className="why-card" key={i}>
               <h3>{b.h}</h3>
               <p>{b.p}</p>

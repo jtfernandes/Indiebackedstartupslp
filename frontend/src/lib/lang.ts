@@ -17,9 +17,6 @@ export function useLang(): [Lang, (next: Lang) => void] {
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    document.title = lang === 'pt'
-      ? 'IndieBacked Startups — Proteção, em piloto automático.'
-      : 'IndieBacked Startups — Protection, on autopilot.';
   }, [lang]);
 
   const setLang = (next: Lang) => {
@@ -28,4 +25,10 @@ export function useLang(): [Lang, (next: Lang) => void] {
   };
 
   return [lang, setLang];
+}
+
+export function usePageTitle(lang: Lang, titles: Record<Lang, string>) {
+  useEffect(() => {
+    document.title = titles[lang];
+  }, [lang, titles]);
 }
