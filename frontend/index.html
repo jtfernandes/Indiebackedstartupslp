@@ -3,21 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#110522" />
+    <meta name="theme-color" content="#FAF9F5" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <title>IndieBacked Startups — Insurance, on autopilot</title>
+    <title>IndieBacked Startups — Protection, on autopilot.</title>
     <meta
       name="description"
-      content="A licensed broker that picks the right coverage for your startup at every stage. Built in Southern Europe, for Southern European founders."
+      content="Tell us about your company once. We pick the right policies from 11 carriers across Iberia, keep them current as you grow, and only call you when something needs your attention."
     />
+    <script>
+      // Set the theme before React mounts so the page never flashes light.
+      (function () {
+        try {
+          var saved = localStorage.getItem('indie.theme');
+          var theme;
+          if (saved === 'dark' || saved === 'light') {
+            theme = saved;
+          } else {
+            theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-indie-black text-white antialiased">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

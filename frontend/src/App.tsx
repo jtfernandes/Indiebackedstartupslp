@@ -1,49 +1,46 @@
 import { useState } from 'react';
-import { LanguageToggle } from '@/components/LanguageToggle';
-import { Hero } from '@/components/Hero';
-import { TriggerStrip } from '@/components/TriggerStrip';
-import { HowAutopilot } from '@/components/HowAutopilot';
-import { Pricing } from '@/components/Pricing';
-import { RiskStack } from '@/components/RiskStack';
-import { MultiCarrier } from '@/components/MultiCarrier';
-import { Testimonials } from '@/components/Testimonials';
-import { Partners } from '@/components/Partners';
-import { WhyIndie } from '@/components/WhyIndie';
-import { FinalCTA } from '@/components/FinalCTA';
-import { Footer } from '@/components/Footer';
-import { WaitlistDialog } from '@/components/WaitlistDialog';
-import type { Segment } from '@/lib/i18n';
+import { CONTENT } from '@/lib/content';
+import { useLang } from '@/lib/lang';
+import { Nav } from '@/components/landing/Nav';
+import {
+  Autopilot,
+  Carriers,
+  FinalCTA,
+  Footer,
+  Hero,
+  Pricing,
+  RiskStack,
+  Testimonials,
+  Triggers,
+  VCA,
+  WhyUs,
+} from '@/components/landing/Sections';
+import { Waitlist } from '@/components/landing/Waitlist';
 
 export default function App() {
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [activeSegment, setActiveSegment] = useState<Segment | null>(null);
+  const [lang, setLang] = useLang();
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
 
-  const openWith = (segment: Segment | null) => {
-    setActiveSegment(segment);
-    setDialogOpen(true);
-  };
+  const openWaitlist = () => setWaitlistOpen(true);
+  const closeWaitlist = () => setWaitlistOpen(false);
+
+  const t = CONTENT[lang];
 
   return (
-    <div className="min-h-screen bg-indie-black">
-      <LanguageToggle />
-      <main>
-        <Hero onCta={() => openWith(null)} />
-        <TriggerStrip />
-        <HowAutopilot />
-        <Pricing />
-        <RiskStack />
-        <MultiCarrier />
-        <Testimonials />
-        <Partners onCta={openWith} />
-        <WhyIndie />
-        <FinalCTA onCta={() => openWith(null)} />
-      </main>
-      <Footer />
-      <WaitlistDialog
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}
-        initialSegment={activeSegment}
-      />
+    <div className="page" id="top">
+      <Nav lang={lang} setLang={setLang} onCTA={openWaitlist} />
+      <Hero t={t.hero} onCTA={openWaitlist} />
+      <Triggers t={t.triggers} />
+      <Autopilot t={t.autopilot} />
+      <Pricing t={t.pricing} />
+      <RiskStack t={t.riskstack} />
+      <Carriers t={t.carriers} />
+      <Testimonials quotes={t.quotes} />
+      <VCA t={t.vca} />
+      <WhyUs t={t.whyus} />
+      <FinalCTA t={t.final} onCTA={openWaitlist} />
+      <Footer t={t.footer} />
+      <Waitlist open={waitlistOpen} onClose={closeWaitlist} t={t.waitlist} />
     </div>
   );
 }
