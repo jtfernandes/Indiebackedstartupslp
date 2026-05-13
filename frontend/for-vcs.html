@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FAF9F5" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>IndieBacked — For VCs</title>
+    <meta
+      name="description"
+      content="Indie is the broker your portfolio uses across Portugal and Spain. Pre-negotiated rates at portfolio scale. Same-week onboarding. Free for the fund."
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('indie.theme');
+          var theme;
+          if (saved === 'dark' || saved === 'light') {
+            theme = saved;
+          } else {
+            theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/entries/for-vcs.tsx"></script>
+  </body>
+</html>

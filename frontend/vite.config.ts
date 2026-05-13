@@ -12,6 +12,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        'for-vcs': path.resolve(__dirname, 'for-vcs.html'),
+        'for-accelerators': path.resolve(__dirname, 'for-accelerators.html'),
+      },
+    },
+  },
   server: {
     port: 5173,
     proxy: {
