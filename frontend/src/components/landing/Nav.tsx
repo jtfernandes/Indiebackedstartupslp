@@ -1,6 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
 import type { Lang } from '@/lib/content';
 import { useTheme, toggleTheme } from '@/lib/theme';
-import { IconBrandMark, IconSun, IconMoon } from './Icons';
+import { IconBrandMark, IconClose, IconMenu, IconMoon, IconSun } from './Icons';
 
 interface NavProps {
   lang: Lang;
@@ -23,6 +24,29 @@ function ThemeToggle() {
 }
 
 export function Nav({ lang, setLang, onCTA }: NavProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setMenuOpen(false); };
+    const onPointer = (e: MouseEvent | TouchEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onPointer);
+    document.addEventListener('touchstart', onPointer);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onPointer);
+      document.removeEventListener('touchstart', onPointer);
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <nav className="nav">
       <div className="wrap nav-inner">
@@ -44,6 +68,27 @@ export function Nav({ lang, setLang, onCTA }: NavProps) {
             <button className={lang === 'pt' ? 'on' : ''} onClick={() => setLang('pt')} aria-pressed={lang === 'pt'}>PT</button>
           </div>
           <button className="nav-cta" onClick={onCTA}>{lang === 'pt' ? 'Lista de espera' : 'Join the waitlist'}</button>
+          <div className="mobile-menu-wrap" ref={menuRef}>
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-expanded={menuOpen}
+              aria-label={menuOpen ? (lang === 'pt' ? 'Fechar menu' : 'Close menu') : (lang === 'pt' ? 'Abrir menu' : 'Open menu')}
+            >
+              {menuOpen ? <IconClose size={18} /> : <IconMenu size={18} />}
+            </button>
+            {menuOpen && (
+              <div className="mobile-menu" role="menu">
+                <a className="mobile-menu-link" href="for-vcs.html" role="menuitem" onClick={closeMenu}>{lang === 'pt' ? 'Para VCs' : 'For VCs'}</a>
+                <a className="mobile-menu-link" href="for-accelerators.html" role="menuitem" onClick={closeMenu}>{lang === 'pt' ? 'Para aceleradoras' : 'For accelerators'}</a>
+                <div className="mobile-menu-divider" />
+                <div className="mobile-menu-row">
+                  <span className="mobile-menu-label">{lang === 'pt' ? 'Tema' : 'Theme'}</span>
+                  <ThemeToggle />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>

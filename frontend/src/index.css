@@ -1115,6 +1115,79 @@ section:last-of-type { border-bottom: 0; }
 @media (max-width: 560px) {
   .trigger-grid { grid-template-columns: 1fr; }
   .carrier-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-inner { height: 60px; gap: 12px; }
+  .brand-text { display: none; }
+  .nav-right { gap: 8px; }
+  .nav-cta {
+    font-size: 11px;
+    padding: 8px 14px;
+    letter-spacing: 0.08em;
+  }
+  .lang-toggle button { padding: 5px 9px; font-size: 10px; }
+}
+
+/* ---------- MOBILE MENU (hamburger) ---------- */
+.mobile-menu-wrap { display: none; position: relative; }
+.mobile-menu-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--indie-border);
+  background: #fff;
+  color: var(--fg-1);
+  cursor: pointer;
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.mobile-menu-btn:hover { background: var(--indie-light-grey); }
+.mobile-menu-btn:focus-visible { outline: none; box-shadow: var(--ring-focus); }
+.mobile-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: -8px;
+  min-width: 240px;
+  max-width: calc(100vw - 32px);
+  padding: 8px;
+  background: var(--bg);
+  border: 1px solid var(--indie-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-pop);
+  z-index: 60;
+  animation: mobile-menu-in 140ms ease-out;
+}
+@keyframes mobile-menu-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mobile-menu-link {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 15px;
+  color: var(--fg-1);
+  text-decoration: none;
+  transition: background var(--dur-fast);
+}
+.mobile-menu-link:hover { background: var(--indie-light-grey); }
+.mobile-menu-divider {
+  height: 1px;
+  background: var(--indie-border);
+  margin: 6px 8px;
+}
+.mobile-menu-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 14px;
+}
+.mobile-menu-label {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 13px;
+  color: var(--fg-2);
+}
+
+@media (max-width: 760px) {
+  .mobile-menu-wrap { display: inline-flex; }
+  .nav-right > .theme-toggle { display: none; }
+  .nav-right > .pitch-cross { display: none; }
 }
 
 /* ============================================================
