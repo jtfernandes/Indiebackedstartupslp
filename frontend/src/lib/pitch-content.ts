@@ -121,7 +121,7 @@ export const VCS_CONTENT: Record<Lang, VCsContent> = {
       items: [
         {
           h: 'Preferential pricing across the book.',
-          p: 'Pre-negotiated at portfolio scale across 11 carriers. Typically 10–20% lower than what your founders find on their own.',
+          p: 'Pre-negotiated at portfolio scale across 15 carriers. Typically 10–20% lower than what your founders find on their own.',
         },
         {
           h: 'Same-week onboarding for new investments.',
@@ -208,7 +208,7 @@ export const VCS_CONTENT: Record<Lang, VCsContent> = {
       items: [
         {
           h: 'Condições preferenciais em todo o portfolio.',
-          p: 'Pré-negociadas à escala do portfolio em 11 seguradoras. Tipicamente 10–20% mais baratas do que os teus founders conseguem sozinhos.',
+          p: 'Pré-negociadas à escala do portfolio em 15 seguradoras. Tipicamente 10–20% mais baratas do que os teus founders conseguem sozinhos.',
         },
         {
           h: 'Onboarding na mesma semana para novos investimentos.',

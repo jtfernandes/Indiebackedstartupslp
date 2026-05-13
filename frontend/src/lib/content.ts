@@ -34,6 +34,7 @@ export interface HeroContent {
 export interface TriggerItem { when: string; then: string; tag: string; }
 export interface Step { num: string; title: string; body: string; }
 export interface AnchorLine { strong: string; rest: string; }
+export interface PricingAnchor { eyebrow: string; items: AnchorLine[]; }
 export interface RiskRow { name: string; full: string; what: string; when: string; }
 export interface Quote { body: string; name: string; role: string; }
 export interface VcaCol { h: string; p: string; cta: string; }
@@ -45,7 +46,7 @@ export interface LangContent {
   hero: HeroContent;
   triggers: { eyebrow: string; h2: string; items: TriggerItem[] };
   autopilot: { eyebrow: string; h2: string; sub: string; steps: Step[]; closing: string };
-  pricing: { eyebrow: string; h2: string; body: string; anchor: AnchorLine[] };
+  pricing: { eyebrow: string; h2: string; body: string; anchor: PricingAnchor };
   riskstack: { eyebrow: string; h2: string; sub: string; heads: [string, string, string]; rows: RiskRow[] };
   carriers: { eyebrow: string; h2: string; body: string; logos: string[] };
   quotes: Quote[];
@@ -77,7 +78,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       eyebrow: 'IndieBacked Startups',
       title1: 'Protection,',
       title2: 'on autopilot',
-      sub: 'Tell us about your company once. We pick the right policies from 11 carriers across Iberia, keep them current as you grow, and only call you when something needs your attention.',
+      sub: 'Tell us about your company once. We pick the right policies from 15 carriers across Iberia, keep them current as you grow, and only call you when something needs your attention.',
       cta: 'Join the waitlist',
       meta: 'Indie Mediação de Seguros · ASF #420563256 · Portugal & Spain',
       stack: {
@@ -115,7 +116,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       sub: 'No quote forms. No insurance vocab. No annual scramble.',
       steps: [
         { num: '01', title: '3 minutes of intake.', body: 'Stage, headcount, customers, geography. The kind of thing the CFO already knows.' },
-        { num: '02', title: 'We pick and bind.', body: 'We shop 11 carriers, propose a stack that fits the stage, and bind what you approve. Often immediately; worst case, next business day.' },
+        { num: '02', title: 'We pick and bind.', body: 'We shop 15 carriers, propose a stack that fits the stage, and bind what you approve. Often immediately; worst case, next business day.' },
         { num: '03', title: 'Renewals come back automatically.', body: 'At renewal or when something material changes, we run the numbers and propose: renegotiate, renew, or cancel. Three options, prepared. Your decision.' },
       ],
       closing: "Done right, you forget we're there.",
@@ -124,11 +125,15 @@ export const CONTENT: Record<Lang, LangContent> = {
       eyebrow: 'Pricing',
       h2: 'Priced per product. Quoted in 24h.',
       body: "We don't sell bundles. Each policy gets its own quote with a real, line-item price. You see what each piece costs, you decide what to bind, you can drop coverage you don't need.",
-      anchor: [
-        { strong: "Workers' comp in Portugal runs about €150 / year per person.", rest: '' },
-        { strong: 'D&O moves with the cap table.', rest: ' It climbs after a priced round.' },
-        { strong: 'Most pre-seed stacks come in under what founders budgeted.', rest: '' },
-      ],
+      anchor: {
+        eyebrow: 'What changes the price',
+        items: [
+          { strong: 'Headcount and payroll geography.', rest: ' Drives AT and Saúde.' },
+          { strong: 'Cap-table complexity and investor count.', rest: ' Drives D&O.' },
+          { strong: 'Customer geography and data volume.', rest: ' Drives Cyber.' },
+          { strong: 'Revenue mix and SLA exposure.', rest: ' Drives Tech E&O.' },
+        ],
+      },
     },
     riskstack: {
       eyebrow: "What's in your stack",
@@ -137,18 +142,20 @@ export const CONTENT: Record<Lang, LangContent> = {
       heads: ['Coverage', 'What it does', 'When it activates'],
       rows: [
         { name: 'D&O', full: 'Directors & Officers', what: 'Protects you and your board personally if someone sues over a decision you made running the company.', when: 'Closed a priced round.' },
-        { name: 'Cyber', full: 'Cyber liability', what: 'Pays for breach response, forensics, ransomware, and the lawyers when customer data leaks.', when: 'Storing customer data, processing payments, or selling to enterprise.' },
+        { name: 'Cyber', full: 'Cyber liability', what: 'Pays for breach response, forensics, ransomware, and the lawyers when customer data leaks. Covers AI-driven data incidents too.', when: 'Storing customer data, processing payments, or selling to enterprise.' },
         { name: 'Tech E&O', full: 'Tech errors & omissions', what: 'Covers you if your software causes a customer financial loss — outage, bug, missed SLA.', when: 'Shipped a paid product.' },
         { name: 'EPL', full: 'Employment practices liability', what: 'Covers you when a current or former employee sues over harassment, discrimination, or wrongful termination.', when: 'First hire onwards.' },
-        { name: 'AT + Saúde', full: "Workers' comp + health", what: "Mandatory workers' comp plus group health. The bar to clear before you call yourself an employer.", when: 'First hire onwards.' },
-        { name: 'AI Liability', full: 'AI liability', what: 'Covers claims tied to automated decisions your product makes — denied, mis-scored, mis-advised.', when: 'Your product makes decisions affecting customers.' },
+        { name: 'PI', full: 'Professional Liability', what: 'Covers errors in the advice or services you deliver — including AI-driven recommendations and automated decisions that affect customers.', when: 'Selling services or shipping AI-driven decisions.' },
+        { name: 'GL', full: 'General Liability', what: 'Covers third-party injury or property damage from your operations — a visitor at your office, equipment damage at a client site.', when: 'Operating an office, hosting clients, or running events.' },
+        { name: "Workers' comp", full: "Workers' compensation", what: 'Mandatory once you have employees. Covers medical costs and lost wages if someone is hurt at work.', when: 'First hire onwards.' },
+        { name: 'Group health', full: 'Group health insurance', what: 'Health insurance for the team. The standard benefit founders use to compete on hiring.', when: 'First hire, or when you start competing for talent.' },
       ],
     },
     carriers: {
       eyebrow: 'Multi-carrier',
-      h2: '11 carriers. One relationship.',
+      h2: '15 carriers. One relationship.',
       body: "We're not locked to one balance sheet. We shop the market for the right policy at each stage and switch carriers when it makes sense for you. You see one contact, one bill, one renewal calendar.",
-      logos: ['Hiscox', 'Fidelidade', 'Generali Tranquilidade', 'Allianz', 'Caravela', 'Berkley', 'Innovarisk', 'MetLife', 'Real Vida', 'Mapfre', 'Liberty'],
+      logos: ['Fidelidade', 'Generali Tranquilidade', 'Allianz', 'Caravela Seguros', 'AIG', 'Hiscox', 'Berkley', 'Innovarisk', 'Nuvu', 'Chubb', 'Real Vida', 'MetLife', 'April', 'Intermundial', 'VD Insurance'],
     },
     quotes: [
       { body: "We spent six weeks getting quotes the old way. Indie came back next-day with a real proposal we could actually read. It's the difference between a broker and a fax machine.", name: 'Sofia Castro', role: 'COO, Vexa' },
@@ -168,7 +175,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       h2: 'Licensed. Independent. Built here.',
       blocks: [
         { h: 'Indie Mediação de Seguros, Lda — ASF #420563256.', p: 'Regulated. Accountable. On the hook for the advice we give.' },
-        { h: '11 carrier partners across Portugal and Spain.', p: "We're not a comparison site and we're not locked to a single balance sheet." },
+        { h: '15 carrier partners across Portugal and Spain.', p: "We're not a comparison site and we're not locked to a single balance sheet." },
         { h: 'Backed by Olisipo Way, Caravela, COREAngels.', p: 'Founders backing founders.' },
       ],
     },
@@ -217,7 +224,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       eyebrow: 'IndieBacked Startups',
       title1: 'Proteção,',
       title2: 'em piloto automático',
-      sub: 'Fala-nos da tua empresa, uma vez. Escolhemos as apólices certas entre 11 seguradoras em Portugal e Espanha, mantemo-las em dia à medida que cresces, e só te ligamos quando algo precisa da tua atenção.',
+      sub: 'Fala-nos da tua empresa, uma vez. Escolhemos as apólices certas entre 15 seguradoras em Portugal e Espanha, mantemo-las em dia à medida que cresces, e só te ligamos quando algo precisa da tua atenção.',
       cta: 'Entrar na lista de espera',
       meta: 'Indie Mediação de Seguros · ASF #420563256 · Portugal e Espanha',
       stack: {
@@ -255,7 +262,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       sub: 'Sem formulários de cotação. Sem vocabulário de seguros. Sem corrida anual.',
       steps: [
         { num: '01', title: '3 minutos de onboarding.', body: 'Stage, headcount, clientes, geografia. O que o CFO já sabe de cabeça.' },
-        { num: '02', title: 'Escolhemos e contratamos.', body: 'Consultamos 11 seguradoras, propomos um stack que encaixa no teu estágio, e contratamos o que aprovares. Quase sempre na hora; no pior caso, no dia útil seguinte.' },
+        { num: '02', title: 'Escolhemos e contratamos.', body: 'Consultamos 15 seguradoras, propomos um stack que encaixa no teu estágio, e contratamos o que aprovares. Quase sempre na hora; no pior caso, no dia útil seguinte.' },
         { num: '03', title: 'As renovações voltam sozinhas.', body: 'À renovação, ou quando muda algo importante, fazemos as contas e propomos: renegociar, renovar, ou cancelar. Três opções, preparadas. A decisão é tua.' },
       ],
       closing: 'Feito como deve ser, esqueces-te de nós.',
@@ -264,11 +271,15 @@ export const CONTENT: Record<Lang, LangContent> = {
       eyebrow: 'Preço',
       h2: 'Preço por produto. Cotação em 24h.',
       body: 'Não vendemos pacotes. Cada apólice tem cotação própria, com preço linha a linha. Vês o que cada peça custa, decides o que contratar, e podes cortar a cobertura que não precisas.',
-      anchor: [
-        { strong: 'Acidentes de Trabalho em Portugal anda nos €150 / ano por pessoa.', rest: '' },
-        { strong: 'O D&O acompanha a cap table.', rest: ' Sobe depois de uma ronda priced.' },
-        { strong: 'A maioria dos stacks pre-seed fica abaixo do que os founders esperam.', rest: '' },
-      ],
+      anchor: {
+        eyebrow: 'O que muda o preço',
+        items: [
+          { strong: 'Equipa e geografia da folha.', rest: ' Pesa na AT e na Saúde.' },
+          { strong: 'Complexidade da cap table e número de investidores.', rest: ' Pesa no D&O.' },
+          { strong: 'Geografia dos clientes e volume de dados.', rest: ' Pesa no Cyber.' },
+          { strong: 'Mix de receita e exposição a SLAs.', rest: ' Pesa no Tech E&O.' },
+        ],
+      },
     },
     riskstack: {
       eyebrow: 'O que está no teu stack',
@@ -277,18 +288,20 @@ export const CONTENT: Record<Lang, LangContent> = {
       heads: ['Cobertura', 'O que faz', 'Quando se ativa'],
       rows: [
         { name: 'D&O', full: 'Directors & Officers', what: 'Protege-te a ti e ao teu board, pessoalmente, se te processarem por uma decisão tomada a gerir a empresa.', when: 'Fechaste uma ronda priced.' },
-        { name: 'Cyber', full: 'Cyber liability', what: 'Paga resposta a incidentes, forense, ransomware e advogados quando dados de clientes vazam.', when: 'Guardas dados de clientes, processas pagamentos, ou vendes a enterprise.' },
+        { name: 'Cyber', full: 'Cyber liability', what: 'Paga resposta a incidentes, forense, ransomware e advogados quando dados de clientes vazam. Cobre também incidentes ligados a IA.', when: 'Guardas dados de clientes, processas pagamentos, ou vendes a enterprise.' },
         { name: 'Tech E&O', full: 'Tech errors & omissions', what: 'Cobre-te se o teu software causar perda financeira ao cliente — downtime, bug, SLA falhado.', when: 'Lançaste um produto pago.' },
         { name: 'EPL', full: 'Employment practices liability', what: 'Cobre-te quando um funcionário (atual ou antigo) te processa por assédio, discriminação ou despedimento sem justa causa.', when: 'A partir da primeira contratação.' },
-        { name: 'AT + Saúde', full: 'Acidentes de Trabalho + Saúde', what: 'AT obrigatório mais Saúde de grupo. O mínimo para te chamares empregador.', when: 'A partir da primeira contratação.' },
-        { name: 'AI Liability', full: 'Responsabilidade IA', what: 'Cobre reclamações ligadas a decisões automáticas do teu produto — negadas, mal classificadas, mal aconselhadas.', when: 'O teu produto toma decisões que afetam clientes.' },
+        { name: 'RC Profissional', full: 'Responsabilidade Civil Profissional', what: 'Cobre erros nos serviços ou nas recomendações que prestas — incluindo decisões automáticas com IA que afetam clientes.', when: 'Vendes serviços ou usas IA em decisões para clientes.' },
+        { name: 'RC Geral', full: 'Responsabilidade Civil Geral', what: 'Cobre danos a terceiros ou bens decorrentes da operação — alguém cair no escritório, equipamento que danifica algo em casa de cliente.', when: 'Tens escritório, recebes clientes ou eventos.' },
+        { name: 'AT', full: 'Acidentes de Trabalho', what: 'Obrigatório a partir da primeira contratação. Cobre custos médicos e salário em caso de acidente no trabalho.', when: 'A partir da primeira contratação.' },
+        { name: 'Saúde', full: 'Saúde de grupo', what: 'Seguro de saúde para a equipa. O benefício-padrão que os founders usam para competir no hiring.', when: 'Primeira contratação, ou quando começas a competir por talento.' },
       ],
     },
     carriers: {
       eyebrow: 'Multi-seguradora',
-      h2: '11 seguradoras. Uma relação.',
+      h2: '15 seguradoras. Uma relação.',
       body: 'Não estamos presos a um único balanço. Procuramos a apólice certa no mercado em cada estágio, e mudamos de seguradora quando faz sentido para ti. Vês um contacto, uma fatura, um calendário de renovações.',
-      logos: ['Hiscox', 'Fidelidade', 'Generali Tranquilidade', 'Allianz', 'Caravela', 'Berkley', 'Innovarisk', 'MetLife', 'Real Vida', 'Mapfre', 'Liberty'],
+      logos: ['Fidelidade', 'Generali Tranquilidade', 'Allianz', 'Caravela Seguros', 'AIG', 'Hiscox', 'Berkley', 'Innovarisk', 'Nuvu', 'Chubb', 'Real Vida', 'MetLife', 'April', 'Intermundial', 'VD Insurance'],
     },
     quotes: [
       { body: 'Estivemos seis semanas a apanhar cotações à moda antiga. A Indie respondeu no dia seguinte com uma proposta que se conseguia ler. É a diferença entre um corretor e um fax.', name: 'Sofia Castro', role: 'COO, Vexa' },
@@ -308,7 +321,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       h2: 'Licenciados. Independentes. Construídos aqui.',
       blocks: [
         { h: 'Indie Mediação de Seguros, Lda — ASF #420563256.', p: 'Regulados. Responsáveis. A responder pessoalmente pelos conselhos que damos.' },
-        { h: '11 seguradoras parceiras em Portugal e Espanha.', p: 'Não somos um site de comparação e não estamos presos a um único balanço.' },
+        { h: '15 seguradoras parceiras em Portugal e Espanha.', p: 'Não somos um site de comparação e não estamos presos a um único balanço.' },
         { h: 'Apoiados por Olisipo Way, Caravela, COREAngels.', p: 'Founders a apoiar founders.' },
       ],
     },

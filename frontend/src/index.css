@@ -586,20 +586,27 @@ section:last-of-type { border-bottom: 0; }
   border-left: 4px solid var(--indie-yellow);
   padding: 8px 0 8px 24px;
 }
+.pricing-anchor .anchor-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin: 0 0 18px;
+}
 .pricing-anchor p {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
   letter-spacing: -0.005em;
   color: var(--fg-1);
-  margin: 0 0 16px;
+  margin: 0 0 14px;
 }
 .pricing-anchor p:last-child { margin-bottom: 0; }
 .pricing-anchor strong {
   font-weight: 700;
-  background: linear-gradient(transparent 60%, var(--indie-yellow) 60%);
-  padding: 0 2px;
 }
 
 /* ---------- RISK STACK TABLE ---------- */
@@ -622,7 +629,7 @@ section:last-of-type { border-bottom: 0; }
 .risk-cell {
   padding: 24px 24px 24px 0;
   border-bottom: 1px solid var(--indie-light-grey);
-  display: flex; align-items: flex-start;
+  display: flex; flex-direction: column; align-items: flex-start;
 }
 .risk-cell + .risk-cell { padding-left: 24px; }
 .risk-name {
@@ -663,7 +670,7 @@ section:last-of-type { border-bottom: 0; }
 .carriers .sec-eyebrow .num { background: var(--indie-yellow); color: var(--indie-button-dark); }
 .carrier-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0;
   border-top: 1px solid rgba(255,255,255,0.12);
   border-left: 1px solid rgba(255,255,255,0.12);
