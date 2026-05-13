@@ -14,7 +14,7 @@ The page should sound like a founder talking to another founder about something 
 - **Agentic and AI-first, without saying so.** Software does the monitoring, the renewal tracking, the gap analysis, the doc parsing. That shows up in *what we describe ourselves doing* — not in marketing labels. We don't lead with "AI-powered." We let it be visible in the product.
 - **Seamless is the goal, not the boast.** The promise is that you forget we're there. We say it once and then we earn it.
 - **Trustworthy advisor, not vendor.** We give the advice we'd give a friend — including advice that doesn't make us money. *"You don't need that yet." "Talk to a lawyer first." "This is a regulator question, not an insurance question."*
-- **Specifics over adjectives.** "11 carriers" beats "many carriers." "€150/year per person" beats "starts low." Numbers are the load-bearing part of the page.
+- **Specifics over adjectives.** "15 carriers" beats "many carriers." "€150/year per person" beats "starts low." Numbers are the load-bearing part of the page.
 - **Sentences land.** One promise per sentence. Active voice. Founder as subject when possible.
 - **No banned-word lists.** If *"leverage"* is the most accurate verb, use it. If *"unlock"* describes what actually happens, use it. The test isn't avoidance — it's whether a smart founder reading at 11pm would believe the sentence.
 
@@ -29,14 +29,14 @@ The page should sound like a founder talking to another founder about something 
 > *(yellow accent on the period)*
 
 **Sub**
-> Tell us about your company once. We pick the right policies from 11 carriers across Iberia, keep them current as you grow, and only call you when something needs your attention.
+> Tell us about your company once. We pick the right policies from 15 carriers across Iberia, keep them current as you grow, and only call you when something needs your attention.
 
 **Primary CTA** · `Join the waitlist →`
 
 **PT**
 **Eyebrow** · IndieBacked Startups
 **H1** · **Proteção, em piloto automático.**
-**Sub** · *Conta-nos sobre a tua empresa uma vez. Escolhemos as apólices certas em 11 seguradoras da Ibéria, mantemo-las atualizadas à medida que cresces, e só te ligamos quando precisa da tua atenção.*
+**Sub** · *Conta-nos sobre a tua empresa uma vez. Escolhemos as apólices certas em 15 seguradoras da Ibéria, mantemo-las atualizadas à medida que cresces, e só te ligamos quando precisa da tua atenção.*
 **Primary CTA** · `Entrar na waitlist →`
 
 ---
@@ -80,8 +80,8 @@ Layout: 3-col grid on desktop, 2 on tablet, stacked on mobile.
 *PT — **Conta-nos uma vez.** 3 minutos de perguntas. Fase, headcount, clientes, geografias. Coisas que o teu CFO já sabe de cor.*
 
 **02 · We pick and bind.**
-We shop 11 carriers across Portugal and Spain, propose a stack that fits your stage, and bind the policies you approve. Often immediately. Worst case, next business day.
-*PT — **Escolhemos e contratamos.** Comparamos 11 seguradoras em Portugal e Espanha, propomos um stack adequado à tua fase e contratamos as apólices que aprovares. Muitas vezes na hora. Na pior das hipóteses, no dia útil seguinte.*
+We shop 15 carriers across Portugal and Spain, propose a stack that fits your stage, and bind the policies you approve. Often immediately. Worst case, next business day.
+*PT — **Escolhemos e contratamos.** Comparamos 15 seguradoras em Portugal e Espanha, propomos um stack adequado à tua fase e contratamos as apólices que aprovares. Muitas vezes na hora. Na pior das hipóteses, no dia útil seguinte.*
 
 **03 · Renewals come back automatically.**
 At renewal — or when something material changes — we run the numbers and propose: renegotiate, renew, or cancel. Three options, prepared for you. Your call.
@@ -147,15 +147,15 @@ At renewal — or when something material changes — we run the numbers and pro
 
 ## 6 · Multi-carrier proof
 
-**Header** · `11 carriers. One relationship.`
-**PT** · `11 seguradoras. Uma única relação.`
+**Header** · `15 carriers. One relationship.`
+**PT** · `15 seguradoras. Uma única relação.`
 
 **Body**
 > We're not locked to one balance sheet. We shop the market for the right policy at each stage and switch carriers when it makes sense for you. You see one contact, one bill, one renewal calendar.
 
 **PT** · *Não estamos presos a um único balanço. Vamos ao mercado pela apólice certa em cada fase e mudamos de seguradora quando faz sentido para ti. Vês um contacto, uma fatura, um calendário de renovações.*
 
-**Logo strip** — same 11 carriers from v1 (Hiscox, Fidelidade, Generali Tranquilidade, Allianz, Caravela, Berkley, Innovarisk, Metlife, Real Vida, + 2). Monochrome on dark.
+**Logo strip** — 15 carriers (Fidelidade, Generali Tranquilidade, Allianz, Caravela Seguros, AIG, Hiscox, Berkley, Innovarisk, Nuvu, Chubb, Real Vida, MetLife, April, Intermundial, VD Insurance). Monochrome on dark.
 
 ---
 
@@ -229,7 +229,7 @@ Three short paragraphs, no sub-headers — they stack vertically as a tight bloc
 Regulated. Accountable. On the hook for the advice we give.
 *PT — Regulados. Responsáveis. Vinculados ao aconselhamento que damos.*
 
-**11 carrier partners across Portugal and Spain.**
+**15 carrier partners across Portugal and Spain.**
 We're not a comparison site and we're not locked to a single balance sheet. We shop the market and put you with the carrier that fits your stage.
 *PT — Não somos um comparador e não estamos presos a um único balanço. Vamos ao mercado e colocamos-te na seguradora certa para a tua fase.*
 
@@ -269,7 +269,7 @@ EN/PT toggle stays in top-right. No nav, no social.
 | Pricing ranges by stage | João | Currently directional — sharpen with real internal numbers |
 | Testimonial signoff | João | Three drafts in friends' voices — confirm with each |
 | AT €150/person figure | João | Confirm or replace with your real anchor |
-| Carrier list (final 11) | João | v1 list assumed; rotate if needed |
+| Carrier list (final 15) | João | v1 list assumed; rotate if needed |
 | "Backed by" list | João | Olisipo Way, Caravela, COREAngels — same as v1 |
 | Real customer wins / claims numbers | João | Optional but would replace one of the testimonials with hard data |
 

@@ -858,6 +858,20 @@ section:last-of-type { border-bottom: 0; }
 .final-cta:hover { background: var(--indie-dark-hover); transform: translateY(-1px); }
 .final-cta:focus-visible { outline: none; box-shadow: var(--ring-focus); }
 
+.pitch-cta-secondary {
+  font-size: 13px;
+  color: var(--fg-3);
+  text-decoration: underline;
+  text-decoration-color: var(--indie-border);
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast);
+}
+.pitch-cta-secondary:hover { color: var(--fg-1); text-decoration-color: currentColor; }
+.pitch-cta-secondary-wrap {
+  margin-top: 16px;
+  text-align: center;
+}
+
 /* ---------- FOOTER ---------- */
 .footer {
   padding: 32px 0;

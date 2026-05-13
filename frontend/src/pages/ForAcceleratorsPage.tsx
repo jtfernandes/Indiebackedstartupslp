@@ -7,12 +7,16 @@ const TITLES = {
 } as const;
 import { PitchNav } from '@/components/landing/pitch/PitchNav';
 import {
+  CALENDLY_URL,
   CohortPanel,
   OwnStackRow,
   PitchFinal,
   PitchFooter,
+  SecondaryEmailCTA,
   TrustBlock,
 } from '@/components/landing/pitch/PitchShared';
+
+const SUBJECT = 'IndieBacked%20for%20accelerators';
 
 export default function ForAcceleratorsPage() {
   const [lang, setLang] = useLang();
@@ -35,7 +39,8 @@ export default function ForAcceleratorsPage() {
               <h1>{t.hero.h1}</h1>
               <p className="hero-sub">{t.hero.sub}</p>
               <div className="hero-actions">
-                <a className="nav-cta" href="mailto:partners@indie.pt?subject=IndieBacked%20for%20accelerators">{t.hero.cta}</a>
+                <a className="nav-cta" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">{t.hero.cta}</a>
+                <SecondaryEmailCTA lang={lang} subject={SUBJECT} />
                 <span className="hero-meta">{t.hero.meta}</span>
               </div>
             </div>
@@ -109,7 +114,7 @@ export default function ForAcceleratorsPage() {
 
       <TrustBlock lang={lang} />
 
-      <PitchFinal h={t.final.h} body={t.final.body} cta={t.final.cta} />
+      <PitchFinal h={t.final.h} body={t.final.body} cta={t.final.cta} lang={lang} subject={SUBJECT} />
 
       <PitchFooter />
     </div>
